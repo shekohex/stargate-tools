@@ -1,0 +1,104 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@std/assert@^0.224.0": "jsr:@std/assert@0.224.0",
+      "jsr:@std/cli@^0.224.0": "jsr:@std/cli@0.224.0",
+      "npm:coingecko-api-v3@^0.0.29": "npm:coingecko-api-v3@0.0.29",
+      "npm:viem": "npm:viem@2.9.28_ws@8.13.0",
+      "npm:viem@2.9.28": "npm:viem@2.9.28_ws@8.13.0",
+      "npm:viem@^2.9.28": "npm:viem@2.9.28_ws@8.13.0"
+    },
+    "jsr": {
+      "@std/assert@0.224.0": {
+        "integrity": "8643233ec7aec38a940a8264a6e3eed9bfa44e7a71cc6b3c8874213ff401967f"
+      },
+      "@std/cli@0.224.0": {
+        "integrity": "2612373d68984637bdad8b9c9dd160e9838ac2a6d463354d537d2897a7cc6d1c",
+        "dependencies": [
+          "jsr:@std/assert@^0.224.0"
+        ]
+      }
+    },
+    "npm": {
+      "@adraffy/ens-normalize@1.10.0": {
+        "integrity": "sha512-nA9XHtlAkYfJxY7bce8DcN7eKxWWCWkU+1GR9d+U6MbNpfwQp8TI7vqOsBsMcHoT4mBu2kypKoSKnghEzOOq5Q==",
+        "dependencies": {}
+      },
+      "@noble/curves@1.2.0": {
+        "integrity": "sha512-oYclrNgRaM9SsBUBVbb8M6DTV7ZHRTKugureoYEncY5c65HOmRzvSiTE3y5CYaPYJA/GVkrhXEoF0M3Ya9PMnw==",
+        "dependencies": {
+          "@noble/hashes": "@noble/hashes@1.3.2"
+        }
+      },
+      "@noble/hashes@1.3.2": {
+        "integrity": "sha512-MVC8EAQp7MvEcm30KWENFjgR+Mkmf+D189XJTkFIlwohU5hcBbn1ZkKq7KVTi2Hme3PMGF390DaL52beVrIihQ==",
+        "dependencies": {}
+      },
+      "@scure/base@1.1.6": {
+        "integrity": "sha512-ok9AWwhcgYuGG3Zfhyqg+zwl+Wn5uE+dwC0NV/2qQkx4dABbb/bx96vWu8NSj+BNjjSjno+JRYRjle1jV08k3g==",
+        "dependencies": {}
+      },
+      "@scure/bip32@1.3.2": {
+        "integrity": "sha512-N1ZhksgwD3OBlwTv3R6KFEcPojl/W4ElJOeCZdi+vuI5QmTFwLq3OFf2zd2ROpKvxFdgZ6hUpb0dx9bVNEwYCA==",
+        "dependencies": {
+          "@noble/curves": "@noble/curves@1.2.0",
+          "@noble/hashes": "@noble/hashes@1.3.2",
+          "@scure/base": "@scure/base@1.1.6"
+        }
+      },
+      "@scure/bip39@1.2.1": {
+        "integrity": "sha512-Z3/Fsz1yr904dduJD0NpiyRHhRYHdcnyh73FZWiV+/qhWi83wNJ3NWolYqCEN+ZWsUz2TWwajJggcRE9r1zUYg==",
+        "dependencies": {
+          "@noble/hashes": "@noble/hashes@1.3.2",
+          "@scure/base": "@scure/base@1.1.6"
+        }
+      },
+      "abitype@1.0.0": {
+        "integrity": "sha512-NMeMah//6bJ56H5XRj8QCV4AwuW6hB6zqz2LnhhLdcWVQOsXki6/Pn3APeqxCma62nXIcmZWdu1DlHWS74umVQ==",
+        "dependencies": {}
+      },
+      "coingecko-api-v3@0.0.29": {
+        "integrity": "sha512-4aF0mU6Pwmo78W4NsPbMslU3ooeSa2Dq8a8PFR+5+wWcWvTBMiUZgfy9UvybynYVsnvYCoyxtNwxTiMZBeZh4w==",
+        "dependencies": {
+          "https": "https@1.0.0"
+        }
+      },
+      "https@1.0.0": {
+        "integrity": "sha512-4EC57ddXrkaF0x83Oj8sM6SLQHAWXw90Skqu2M4AEWENZ3F02dFJE/GARA8igO79tcgYqGrD7ae4f5L3um2lgg==",
+        "dependencies": {}
+      },
+      "isows@1.0.3_ws@8.13.0": {
+        "integrity": "sha512-2cKei4vlmg2cxEjm3wVSqn8pcoRF/LX/wpifuuNquFO4SQmPwarClT+SUCA2lt+l581tTeZIPIZuIDo2jWN1fg==",
+        "dependencies": {
+          "ws": "ws@8.13.0"
+        }
+      },
+      "viem@2.9.28_ws@8.13.0": {
+        "integrity": "sha512-/1iTg8yQlCNJ+7wSmdsBNB/vhjWqFJtTH6XZXHjGXrZnlBxAtHR5ZAr5TvTJc/2nhVIVE4BkCe5JCrIiSuZodg==",
+        "dependencies": {
+          "@adraffy/ens-normalize": "@adraffy/ens-normalize@1.10.0",
+          "@noble/curves": "@noble/curves@1.2.0",
+          "@noble/hashes": "@noble/hashes@1.3.2",
+          "@scure/bip32": "@scure/bip32@1.3.2",
+          "@scure/bip39": "@scure/bip39@1.2.1",
+          "abitype": "abitype@1.0.0",
+          "isows": "isows@1.0.3_ws@8.13.0",
+          "ws": "ws@8.13.0"
+        }
+      },
+      "ws@8.13.0": {
+        "integrity": "sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==",
+        "dependencies": {}
+      }
+    }
+  },
+  "remote": {},
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/cli@^0.224.0",
+      "npm:coingecko-api-v3@^0.0.29",
+      "npm:viem@^2.9.28"
+    ]
+  }
+}
