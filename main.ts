@@ -292,34 +292,53 @@ if (import.meta.main) {
     });
   }
   // Add stablecoins to token prices with a price of 1.
-  tokenPrices[CONTRACT_ADDRESSES_MAP[args.chain].USDC] = { usd: 1 };
-  tokenPrices[CONTRACT_ADDRESSES_MAP[args.chain].USDT] = { usd: 1 };
+  tokenPrices[CONTRACT_ADDRESSES_MAP[args.chain].USDC] = {
+    usd: 1.0,
+    ticker: "USDC",
+  };
+  tokenPrices[CONTRACT_ADDRESSES_MAP[args.chain].USDT] = {
+    usd: 1.0,
+    ticker: "USDT",
+  };
   // fetch STG, native token of the platform.
   let nativeToken = "ethereum";
+  let nativeTokenTicker = "ETH";
   switch (args.chain) {
     case "mainnet":
       nativeToken = "ethereum";
+      nativeTokenTicker = "ETH";
       break;
     case "bsc":
       nativeToken = "binancecoin";
+      nativeTokenTicker = "BNB";
       break;
     case "polygon":
       nativeToken = "matic-network";
+      nativeTokenTicker = "MATIC";
       break;
     default:
       nativeToken = "ethereum";
+      nativeTokenTicker = "ETH";
   }
   const pricesResponse = await cg.simplePrice({
     ids: ["stargate-finance", nativeToken].join(","),
     vs_currencies: "usd",
   });
-  tokenPrices[stargateTokenAddress] = pricesResponse["stargate-finance"];
-  tokenPrices[zeroAddress] = pricesResponse[nativeToken];
+  tokenPrices[stargateTokenAddress] = {
+    ...pricesResponse["stargate-finance"],
+    ticker: STG_TICKER,
+  };
+  tokenPrices[zeroAddress] = {
+    ...pricesResponse[nativeToken],
+    ticker: nativeTokenTicker,
+  };
   spinner.stop();
 
   console.log("Token Prices:");
   Object.entries(tokenPrices).forEach(([token, price]) => {
-    console.log(`|- ${token}: ${humanizeMoneyValue(price.usd)}`);
+    console.log(
+      `|- ${token} (${price.ticker}): ${humanizeMoneyValue(price.usd)}`,
+    );
   });
 
   console.log(`Number of Active Pools: ${activePoolsWithNames.length}`);
